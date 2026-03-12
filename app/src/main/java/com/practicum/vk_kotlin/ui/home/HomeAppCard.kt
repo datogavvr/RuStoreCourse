@@ -20,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.practicum.vk_kotlin.ui.theme.Vk_kotlinTheme
+import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
 
 @Composable
 internal fun HomeAppCard(
@@ -74,7 +74,7 @@ internal fun HomeAppCard(
 @Preview(showBackground = true)
 @Composable
 private fun HomeAppCardPreview() {
-    Vk_kotlinTheme {
+    VkKotlinTheme {
         HomeAppCard(
             icon = "https://avatars.mds.yandex.net/get-altay/16386092/2a00000199e726cff865ff105f148cff8220/XXL_height",
             title = "Сбербанк Онлайн - с Салютом",

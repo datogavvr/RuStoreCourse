@@ -11,7 +11,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.practicum.vk_kotlin.R
-import com.practicum.vk_kotlin.ui.theme.Vk_kotlinTheme
+import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
 
 @Composable
 internal fun InstallButton(
@@ -31,7 +31,7 @@ internal fun InstallButton(
 @Preview
 @Composable
 private fun Preview() {
-    Vk_kotlinTheme {
+    VkKotlinTheme {
         InstallButton(
             onClick = {},
             modifier = Modifier.fillMaxWidth(),

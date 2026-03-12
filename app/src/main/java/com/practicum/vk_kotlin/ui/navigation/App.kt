@@ -5,12 +5,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
-import com.practicum.vk_kotlin.ui.theme.Vk_kotlinTheme
+import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun App() {
-    Vk_kotlinTheme {
+    VkKotlinTheme {
         val navController = rememberNavController()
 
         Scaffold(

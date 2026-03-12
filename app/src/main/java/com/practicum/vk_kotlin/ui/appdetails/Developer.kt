@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.practicum.vk_kotlin.R
-import com.practicum.vk_kotlin.ui.theme.Vk_kotlinTheme
+import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
 
 @Composable
 internal fun Developer(
@@ -43,7 +43,7 @@ internal fun Developer(
 @Preview
 @Composable
 private fun Preview() {
-    Vk_kotlinTheme {
+    VkKotlinTheme {
         Developer(
             name = "VK Play",
             onClick = {},

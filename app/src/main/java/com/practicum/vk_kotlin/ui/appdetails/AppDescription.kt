@@ -14,7 +14,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.practicum.vk_kotlin.R
-import com.practicum.vk_kotlin.ui.theme.Vk_kotlinTheme
+import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
 
 @Composable
 internal fun AppDescription(
@@ -48,7 +48,7 @@ internal fun AppDescription(
 @Preview
 @Composable
 private fun PreviewShort() {
-    Vk_kotlinTheme {
+    VkKotlinTheme {
         AppDescription(
             description = "Легендарный рейд героев в Фэнтези РПГ. Станьте героем гильдии и зразите мастера подземелья!",
             onReadMoreClick = {},
@@ -60,7 +60,7 @@ private fun PreviewShort() {
 @Preview
 @Composable
 private fun PreviewCollapsed() {
-    Vk_kotlinTheme {
+    VkKotlinTheme {
         AppDescription(
             description = "Легендарный рейд героев в Фэнтези РПГ. Станьте героем гильдии и зразите мастера подземелья!",
             onReadMoreClick = {},

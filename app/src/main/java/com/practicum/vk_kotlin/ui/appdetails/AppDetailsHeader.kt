@@ -26,7 +26,7 @@ import coil.compose.AsyncImage
 import com.practicum.vk_kotlin.App
 import com.practicum.vk_kotlin.domain.appdetails.Category
 import com.practicum.vk_kotlin.R
-import com.practicum.vk_kotlin.ui.theme.Vk_kotlinTheme
+import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
 import kotlin.math.roundToInt
 
 @Composable
@@ -131,7 +131,7 @@ private fun Preview() {
         description = "Легендарный рейд героев в Фэнтези РПГ. Станьте героем гильдии и зразите мастера подземелья!"
 
     )
-    Vk_kotlinTheme {
+    VkKotlinTheme {
         AppDetailsHeader(app = app, modifier = Modifier.fillMaxWidth())
     }
 }

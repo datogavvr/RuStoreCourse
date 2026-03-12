@@ -19,7 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.practicum.vk_kotlin.R
-import com.practicum.vk_kotlin.ui.theme.Vk_kotlinTheme
+import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
 
 @Composable
 internal fun ScreenshotsList(
@@ -54,7 +54,7 @@ internal fun ScreenshotsList(
 @Preview
 @Composable
 private fun Preview() {
-    Vk_kotlinTheme {
+    VkKotlinTheme {
         ScreenshotsList(
             screenshotUrlList = listOf(
                 "https://static.rustore.ru/imgproxy/-y8kd-4B6MQ-1OKbAbnoAIMZAzvoMMG9dSiHMpFaTBc/preset:web_scr_lnd_335/plain/https://static.rustore.ru/apk/393868735/content/SCREENSHOT/dfd33017-e90d-4990-aa8c-6f159d546788.jpg@webp",

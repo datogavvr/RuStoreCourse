@@ -24,7 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.practicum.vk_kotlin.R
-import com.practicum.vk_kotlin.ui.theme.Vk_kotlinTheme
+import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
 
 @Composable
 internal fun HomeHeader() {
@@ -74,7 +74,7 @@ internal fun HomeHeader() {
 @Preview(showBackground = true, backgroundColor = 0xFF3772E7)
 @Composable
 private fun HomeHeaderPreview() {
-    Vk_kotlinTheme {
+    VkKotlinTheme {
         HomeHeader()
     }
 }

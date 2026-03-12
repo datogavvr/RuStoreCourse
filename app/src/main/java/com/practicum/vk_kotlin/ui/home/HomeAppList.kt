@@ -16,7 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.practicum.vk_kotlin.domain.appdetails.Category
 import com.practicum.vk_kotlin.ui.appdetails.getCategoryText
-import com.practicum.vk_kotlin.ui.theme.Vk_kotlinTheme
+import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
 
 
 @Composable
@@ -92,7 +92,7 @@ internal fun HomeAppList(
 @Preview(showBackground = true)
 @Composable
 private fun HomeAppListPreview() {
-    Vk_kotlinTheme {
+    VkKotlinTheme {
         HomeAppList {}
     }
 }

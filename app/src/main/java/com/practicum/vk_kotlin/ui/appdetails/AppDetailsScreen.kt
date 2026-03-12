@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import com.practicum.vk_kotlin.App
 import com.practicum.vk_kotlin.domain.appdetails.Category
 import com.practicum.vk_kotlin.R
-import com.practicum.vk_kotlin.ui.theme.Vk_kotlinTheme
+import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
 
 @Composable
 fun AppDetailsScreen(
@@ -114,7 +114,7 @@ private fun getApp(): App = App(
 @Preview
 @Composable
 private fun Preview() {
-    Vk_kotlinTheme {
+    VkKotlinTheme {
         AppDetailsScreen(
             modifier = Modifier.fillMaxSize(),
         )

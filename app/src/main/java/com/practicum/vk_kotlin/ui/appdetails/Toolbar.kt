@@ -12,7 +12,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.practicum.vk_kotlin.ui.theme.Vk_kotlinTheme
+import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
 
 @Composable
 internal fun Toolbar(
@@ -45,7 +45,7 @@ internal fun Toolbar(
 @Preview
 @Composable
 private fun Preview() {
-    Vk_kotlinTheme {
+    VkKotlinTheme {
         Toolbar(
             onBackClick = {},
             onShareClick = {},
