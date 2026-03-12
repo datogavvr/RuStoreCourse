@@ -1,4 +1,4 @@
-package com.practicum.vk_kotlin.ui.appdetails
+package com.practicum.vk_kotlin.presentation.appdetails
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -12,7 +12,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
+import com.practicum.vk_kotlin.presentation.theme.VkKotlinTheme
 
 @Composable
 internal fun Toolbar(

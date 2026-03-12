@@ -1,4 +1,4 @@
-package com.practicum.vk_kotlin.ui.appdetails
+package com.practicum.vk_kotlin.presentation.appdetails
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
@@ -20,10 +20,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.practicum.vk_kotlin.App
+import com.practicum.vk_kotlin.AppDetails
 import com.practicum.vk_kotlin.domain.appdetails.Category
 import com.practicum.vk_kotlin.R
-import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
+import com.practicum.vk_kotlin.presentation.theme.VkKotlinTheme
 
 @Composable
 fun AppDetailsScreen(
@@ -95,7 +95,7 @@ fun AppDetailsScreen(
 }
 
 // В будущем заменим этот метод на вызов API.
-private fun getApp(): App = App(
+private fun getApp(): AppDetails = AppDetails(
     name = "Гильдия Героев: Экшен ММО РПГ",
     developer = "VK Play",
     category = Category.GAME,

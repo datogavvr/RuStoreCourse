@@ -1,4 +1,4 @@
-package com.practicum.vk_kotlin.ui.appdetails
+package com.practicum.vk_kotlin.presentation.appdetails
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -14,7 +14,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.practicum.vk_kotlin.R
-import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
+import com.practicum.vk_kotlin.presentation.theme.VkKotlinTheme
 
 @Composable
 internal fun AppDescription(

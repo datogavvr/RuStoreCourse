@@ -1,4 +1,4 @@
-package com.practicum.vk_kotlin.ui.theme
+package com.practicum.vk_kotlin.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

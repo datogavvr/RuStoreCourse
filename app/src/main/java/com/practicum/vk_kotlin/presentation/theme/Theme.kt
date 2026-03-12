@@ -1,4 +1,4 @@
-package com.practicum.vk_kotlin.ui.theme
+package com.practicum.vk_kotlin.presentation.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

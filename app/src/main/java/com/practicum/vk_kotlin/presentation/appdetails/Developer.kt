@@ -1,4 +1,4 @@
-package com.practicum.vk_kotlin.ui.appdetails
+package com.practicum.vk_kotlin.presentation.appdetails
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.practicum.vk_kotlin.R
-import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
+import com.practicum.vk_kotlin.presentation.theme.VkKotlinTheme
 
 @Composable
 internal fun Developer(

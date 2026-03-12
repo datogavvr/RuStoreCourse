@@ -1,4 +1,4 @@
-package com.practicum.vk_kotlin.ui.home
+package com.practicum.vk_kotlin.presentation.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -24,7 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.practicum.vk_kotlin.R
-import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
+import com.practicum.vk_kotlin.presentation.theme.VkKotlinTheme
 
 @Composable
 internal fun HomeHeader() {

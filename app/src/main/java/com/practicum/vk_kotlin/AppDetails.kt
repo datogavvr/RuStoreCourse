@@ -2,7 +2,7 @@ package com.practicum.vk_kotlin
 
 import com.practicum.vk_kotlin.domain.appdetails.Category
 
-data class App(
+data class AppDetails(
     val name: String,
     val developer: String,
     val category: Category,

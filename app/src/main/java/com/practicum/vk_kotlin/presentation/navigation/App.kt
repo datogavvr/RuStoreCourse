@@ -1,11 +1,11 @@
-package com.practicum.vk_kotlin.ui.navigation
+package com.practicum.vk_kotlin.presentation.navigation
 
 import android.annotation.SuppressLint
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
-import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
+import com.practicum.vk_kotlin.presentation.theme.VkKotlinTheme
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable

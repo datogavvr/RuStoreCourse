@@ -1,4 +1,4 @@
-package com.practicum.vk_kotlin.ui.appdetails
+package com.practicum.vk_kotlin.presentation.appdetails
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
@@ -23,15 +23,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.practicum.vk_kotlin.App
+import com.practicum.vk_kotlin.AppDetails
 import com.practicum.vk_kotlin.domain.appdetails.Category
 import com.practicum.vk_kotlin.R
-import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
+import com.practicum.vk_kotlin.presentation.theme.VkKotlinTheme
 import kotlin.math.roundToInt
 
 @Composable
 internal fun AppDetailsHeader(
-    app: App,
+    app: AppDetails,
     modifier: Modifier = Modifier,
 ) {
     Row(
@@ -115,7 +115,7 @@ fun getCategoryText(category: Category): String = when (category) {
 @Preview(showBackground = true)
 @Composable
 private fun Preview() {
-    val app = App(
+    val app = AppDetails(
         name = "Гильдия Героев: Экшен ММО РПГ",
         developer = "VK Play",
         category = Category.GAME,

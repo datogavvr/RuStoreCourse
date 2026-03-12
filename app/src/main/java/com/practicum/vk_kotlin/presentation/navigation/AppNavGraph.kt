@@ -1,4 +1,4 @@
-package com.practicum.vk_kotlin.ui.navigation
+package com.practicum.vk_kotlin.presentation.navigation
 
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
@@ -10,8 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.practicum.vk_kotlin.ui.appdetails.AppDetailsScreen
-import com.practicum.vk_kotlin.ui.home.HomeScreen
+import com.practicum.vk_kotlin.presentation.appdetails.AppDetailsScreen
+import com.practicum.vk_kotlin.presentation.home.HomeScreen
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable

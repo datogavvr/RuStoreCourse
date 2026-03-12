@@ -1,4 +1,4 @@
-package com.practicum.vk_kotlin.ui.home
+package com.practicum.vk_kotlin.presentation.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -7,7 +7,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.practicum.vk_kotlin.ui.theme.VkKotlinTheme
+import com.practicum.vk_kotlin.presentation.theme.VkKotlinTheme
 
 @Composable
 fun HomeScreen(

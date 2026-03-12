@@ -1,4 +1,4 @@
-package com.practicum.vk_kotlin.ui.theme
+package com.practicum.vk_kotlin.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
