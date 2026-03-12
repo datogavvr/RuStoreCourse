@@ -23,7 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.practicum.vk_kotlin.AppDetails
+import com.practicum.vk_kotlin.domain.appdetails.AppDetails
 import com.practicum.vk_kotlin.domain.appdetails.Category
 import com.practicum.vk_kotlin.R
 import com.practicum.vk_kotlin.presentation.theme.VkKotlinTheme
