@@ -51,7 +51,7 @@ internal fun ScreenshotsList(
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun Preview() {
     VkKotlinTheme {

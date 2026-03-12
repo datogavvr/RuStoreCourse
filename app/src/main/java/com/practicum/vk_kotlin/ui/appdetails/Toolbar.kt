@@ -42,7 +42,7 @@ internal fun Toolbar(
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun Preview() {
     VkKotlinTheme {

@@ -45,7 +45,7 @@ internal fun AppDescription(
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun PreviewShort() {
     VkKotlinTheme {
@@ -57,7 +57,7 @@ private fun PreviewShort() {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun PreviewCollapsed() {
     VkKotlinTheme {

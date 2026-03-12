@@ -112,7 +112,7 @@ fun getCategoryText(category: Category): String = when (category) {
     Category.UTILITIES -> stringResource(R.string.category_utilities)
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun Preview() {
     val app = App(
