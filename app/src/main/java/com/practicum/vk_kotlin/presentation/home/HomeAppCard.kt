@@ -20,6 +20,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.practicum.vk_kotlin.domain.appdetails.Category
+import com.practicum.vk_kotlin.presentation.appdetails.getCategoryText
 import com.practicum.vk_kotlin.presentation.theme.VkKotlinTheme
 
 @Composable
@@ -27,11 +29,12 @@ internal fun HomeAppCard(
     icon: String,
     title: String,
     description: String,
-    category: String,
+    category: Category,
+    modifier: Modifier = Modifier,
     onClick: () -> Unit
 ) {
     Row(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .clickable { onClick() }
             .padding(vertical = 10.dp),
@@ -63,10 +66,10 @@ internal fun HomeAppCard(
                 fontSize = 12.sp,
                 )
             Text(
-                text = category,
+                text = getCategoryText(category),
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
-                fontSize = 12.sp,
-                )
+                fontSize = 12.sp
+            )
         }
     }
 }
@@ -79,7 +82,7 @@ private fun HomeAppCardPreview() {
             icon = "https://avatars.mds.yandex.net/get-altay/16386092/2a00000199e726cff865ff105f148cff8220/XXL_height",
             title = "Сбербанк Онлайн - с Салютом",
             description = "Больше чем банк",
-            category = "Финансы",
+            category = Category.FINANCE,
             onClick = {}
         )
     }
