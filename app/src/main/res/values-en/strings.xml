@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">RuStore</string>
+    <string name="app_description">RuStore — the official Russian mobile app store for Android</string>
     <string name="category_app">App</string>
     <string name="category_game">Game</string>
     <string name="category_productivity">Productivity</string>
@@ -29,4 +30,6 @@
     <string name="app_details_read_more">Read more</string>
     <string name="app_details_developer">Developer</string>
     <string name="under_development">Under development</string>
+    <string name="app_details_error">An unexpected error has occurred</string>
+    <string name="app_details_error_refresh">Refresh</string>
 </resources>
