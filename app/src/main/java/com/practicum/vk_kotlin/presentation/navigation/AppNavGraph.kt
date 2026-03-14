@@ -17,13 +17,10 @@ import com.practicum.vk_kotlin.presentation.home.HomeScreen
 @Composable
 fun AppNavGraph(
     navController: NavHostController,
-    padding: PaddingValues
 ) {
     NavHost(
         navController = navController,
         startDestination = Routes.HOME.name,
-        modifier = Modifier
-            .padding(padding),
         enterTransition = {
             EnterTransition.None
         },
@@ -36,7 +33,7 @@ fun AppNavGraph(
         }
 
         composable(Routes.APP_DETAILS.name) {
-            AppDetailsScreen()
+            AppDetailsScreen(onBackClick = { navController.popBackStack() })
         }
     }
 }
