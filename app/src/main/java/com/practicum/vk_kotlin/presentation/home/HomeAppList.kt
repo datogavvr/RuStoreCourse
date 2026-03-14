@@ -1,5 +1,6 @@
 package com.practicum.vk_kotlin.presentation.home
 
+import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -15,54 +16,18 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.practicum.vk_kotlin.domain.appdetails.Category
-import com.practicum.vk_kotlin.presentation.appdetails.getCategoryText
+import com.practicum.vk_kotlin.domain.home.ShortAppDetails
 import com.practicum.vk_kotlin.presentation.theme.VkKotlinTheme
 
 
 @Composable
 internal fun HomeAppList(
+    apps: List<ShortAppDetails>,
+    modifier: Modifier = Modifier,
     onAppClick: () -> Unit,
 ) {
-    val apps = listOf(
-        hashMapOf(
-            "icon" to "https://avatars.mds.yandex.net/get-altay/16386092/2a00000199e726cff865ff105f148cff8220/XXL_height",
-            "title" to "Сбербанк Онлайн - с Салютом",
-            "description" to "Больше чем банк",
-            "category" to getCategoryText(Category.FINANCE)
-        ),
-        hashMapOf(
-            "icon" to "https://www.computerra.ru/wp-content/uploads/2020/09/orig.png",
-            "title" to "Яндекс.Браузер - с Алисой",
-            "description" to "Быстрый и безопасный браузер",
-            "category" to getCategoryText(Category.UTILITIES)
-        ),
-        hashMapOf(
-            "icon" to "https://free-png.ru/wp-content/uploads/2022/02/free-png.ru-307.png",
-            "title" to "ВКонтакте",
-            "description" to "Лучше вместе",
-            "category" to getCategoryText(Category.SOCIAL)
-        ),
-        hashMapOf(
-            "icon" to "https://lens.usercontent.google.com/image?vsrid=CImOmcnrjZi0qgEQAhgBIiQ3YjFiMDMwYi1lNDljLTQ0MDMtOTM5Mi1lOGI1NTg4YjM3MzYyBiICbHUoGTjIsbKxgJiTAw&gsessionid=PeKEzKWGA0uyaaMa0TfriZ315RLfN_OOu19-iZJ2-2pk4az7EoeNlg",
-            "title" to "Авито",
-            "description" to "Здесь решают люди",
-            "category" to getCategoryText(Category.SHOPPING)
-        ),
-        hashMapOf(
-            "icon" to "https://yt3.googleusercontent.com/R5CLUWrDTmVrkfHgweK2RySZ8rWp3RkB8Q1otqWASpNsfsMSFjOr04q2ZxNV1nejOLSyNyTN=s900-c-k-c0x00ffffff-no-rj",
-            "title" to "Яндекс Лавка",
-            "description" to "Хочу пиццу",
-            "category" to getCategoryText(Category.FOOD)
-        ),
-        hashMapOf(
-            "icon" to "https://yt3.googleusercontent.com/Vmsm75pnyB0WFh2FUKit4hpXq9ixjYXUXtqzSjsc7JedL7yYb8uSFH4d0NXyzV2hzdODEYnKROA=s900-c-k-c0x00ffffff-no-rj",
-            "title" to "DDX Fitness",
-            "description" to "Сила в единстве",
-            "category" to getCategoryText(Category.SPORTS)
-        ),
-    )
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .clip(RoundedCornerShape(
                 topStart = 28.dp,
@@ -77,10 +42,10 @@ internal fun HomeAppList(
         ) {
             items(apps) { app ->
                 HomeAppCard(
-                    icon = app["icon"] as String,
-                    title = app["title"] as String,
-                    description = app["description"] as String,
-                    category = app["category"] as String,
+                    icon = app.iconUrl,
+                    title = app.name,
+                    description = app.shortDescription,
+                    category = app.category,
                     onClick = onAppClick
                 )
                 HorizontalDivider()
@@ -89,10 +54,94 @@ internal fun HomeAppList(
     }
 }
 
-@Preview(showBackground = true)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
-private fun HomeAppListPreview() {
+private fun LightPreview() {
     VkKotlinTheme {
-        HomeAppList {}
+        val apps = listOf(
+            ShortAppDetails(
+                name = "Сбербанк Онлайн - с Салютом",
+                category = Category.FINANCE,
+                iconUrl = "https://static.rustore.ru/imgproxy/qriFjN8OV6VBF4CCbWcxPm7SL0Y0YtMfxTeJSzWZ1Rc/preset:web_app_icon_160/plain/https://static.rustore.ru/apk/462271/content/ICON/f1b3c68a-b734-48ce-b62f-490208d3fa0e.png@webp",
+                shortDescription = "Больше чем банк",
+            ),
+            ShortAppDetails(
+                name = "Яндекс.Браузер - с Алисой",
+                category = Category.UTILITIES,
+                iconUrl = "https://static.rustore.ru/imgproxy/rGr87NnjSOsiX-imht9uyNnHK-YDQJNvIlY2rIb4gsA/preset:web_app_icon_62/plain/https://static.rustore.ru/2025/10/25/1e/apk/579007/content/ICON/939321c0-03f7-484d-9043-c0fb12736ef1.png@webp",
+                shortDescription = "Быстрый и безопасный браузер",
+            ),
+            ShortAppDetails(
+                name = "ВКонтакте",
+                category = Category.SOCIAL,
+                iconUrl = "https://static.rustore.ru/imgproxy/gi7isSeWaOdDyern23Uv4oSv4Lv8xRn8D-IKzQ8dEY0/preset:web_app_icon_62/plain/https://static.rustore.ru/3f3d7180-6eb9-45ad-8706-f467c6dcf82a@webp",
+                shortDescription = "Лучше вместе"
+            ),
+            ShortAppDetails(
+                name = "Авито",
+                category = Category.SHOPPING,
+                iconUrl = "https://static.rustore.ru/imgproxy/7HOcGO9T6TglJ15g7aDv0CiensvQL4TYOQvtE46lR6E/preset:web_app_icon_160/plain/https://static.rustore.ru/2026/1/27/d8/apk/2688703/content/ICON/ea0c42d8-934f-41a6-a3da-89798736f888.png@webp",
+                shortDescription = "Здесь решают люди"
+            ),
+            ShortAppDetails(
+                name = "Яндекс Лавка",
+                category = Category.FOOD,
+                iconUrl = "https://static.rustore.ru/imgproxy/ypWTAv2uZ4oLEedPtkx5n6HtVS8JnlILz4PMmdfqvHo/preset:web_app_icon_62/plain/https://static.rustore.ru/2025/12/10/8a/apk/345615295/content/ICON/47dbcfc9-c183-4dbc-9da3-f40a6a98a559.png@webp",
+                shortDescription = "Хочу пиццу"
+            ),
+            ShortAppDetails(
+                name = "DDX Fitness",
+                category = Category.SPORTS,
+                iconUrl = "https://static.rustore.ru/imgproxy/k0V2y3HC-7hPlyPLEbfwQpkTxTBW6AyyhQ9RE_-L9eI/preset:web_app_icon_62/plain/https://static.rustore.ru/apk/2063542256/content/ICON/61811336-a1fe-43f9-9152-a500aebb977a.png@webp",
+                shortDescription = "Сила в единстве",
+            ),
+        )
+        HomeAppList(apps = apps) {}
+    }
+}
+
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun DarkPreview() {
+    VkKotlinTheme {
+        val apps = listOf(
+            ShortAppDetails(
+                name = "Сбербанк Онлайн - с Салютом",
+                category = Category.FINANCE,
+                iconUrl = "https://static.rustore.ru/imgproxy/qriFjN8OV6VBF4CCbWcxPm7SL0Y0YtMfxTeJSzWZ1Rc/preset:web_app_icon_160/plain/https://static.rustore.ru/apk/462271/content/ICON/f1b3c68a-b734-48ce-b62f-490208d3fa0e.png@webp",
+                shortDescription = "Больше чем банк",
+            ),
+            ShortAppDetails(
+                name = "Яндекс.Браузер - с Алисой",
+                category = Category.UTILITIES,
+                iconUrl = "https://static.rustore.ru/imgproxy/rGr87NnjSOsiX-imht9uyNnHK-YDQJNvIlY2rIb4gsA/preset:web_app_icon_62/plain/https://static.rustore.ru/2025/10/25/1e/apk/579007/content/ICON/939321c0-03f7-484d-9043-c0fb12736ef1.png@webp",
+                shortDescription = "Быстрый и безопасный браузер",
+            ),
+            ShortAppDetails(
+                name = "ВКонтакте",
+                category = Category.SOCIAL,
+                iconUrl = "https://static.rustore.ru/imgproxy/gi7isSeWaOdDyern23Uv4oSv4Lv8xRn8D-IKzQ8dEY0/preset:web_app_icon_62/plain/https://static.rustore.ru/3f3d7180-6eb9-45ad-8706-f467c6dcf82a@webp",
+                shortDescription = "Лучше вместе"
+            ),
+            ShortAppDetails(
+                name = "Авито",
+                category = Category.SHOPPING,
+                iconUrl = "https://static.rustore.ru/imgproxy/7HOcGO9T6TglJ15g7aDv0CiensvQL4TYOQvtE46lR6E/preset:web_app_icon_160/plain/https://static.rustore.ru/2026/1/27/d8/apk/2688703/content/ICON/ea0c42d8-934f-41a6-a3da-89798736f888.png@webp",
+                shortDescription = "Здесь решают люди"
+            ),
+            ShortAppDetails(
+                name = "Яндекс Лавка",
+                category = Category.FOOD,
+                iconUrl = "https://static.rustore.ru/imgproxy/ypWTAv2uZ4oLEedPtkx5n6HtVS8JnlILz4PMmdfqvHo/preset:web_app_icon_62/plain/https://static.rustore.ru/2025/12/10/8a/apk/345615295/content/ICON/47dbcfc9-c183-4dbc-9da3-f40a6a98a559.png@webp",
+                shortDescription = "Хочу пиццу"
+            ),
+            ShortAppDetails(
+                name = "DDX Fitness",
+                category = Category.SPORTS,
+                iconUrl = "https://static.rustore.ru/imgproxy/k0V2y3HC-7hPlyPLEbfwQpkTxTBW6AyyhQ9RE_-L9eI/preset:web_app_icon_62/plain/https://static.rustore.ru/apk/2063542256/content/ICON/61811336-a1fe-43f9-9152-a500aebb977a.png@webp",
+                shortDescription = "Сила в единстве",
+            ),
+        )
+        HomeAppList(apps = apps) {}
     }
 }
