@@ -50,9 +50,9 @@ fun HomeScreen(
         ) {
             HomeHeader( onLogoClick = { viewModel.showOnLogoClickMessage() })
             when (val currentState = state) {
-                is HomeState.Content -> HomeAppList(apps = currentState.appDetails, onAppClick = onAppClick)
+                is HomeState.Content -> HomeAppList(apps = currentState.apps, onAppClick = onAppClick)
                 is HomeState.Error -> HomeError(
-                    onRefreshClick = { viewModel.getShortAppDetails() },
+                    onRefreshClick = { viewModel.getApps() },
                 )
                 is HomeState.Loading -> HomeLoading()
             }
