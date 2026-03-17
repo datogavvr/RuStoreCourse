@@ -1,6 +1,7 @@
 package com.practicum.vk_kotlin.presentation.home
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -10,7 +11,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Store
 import androidx.compose.material.icons.filled.Window
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -18,6 +18,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,9 +29,12 @@ import com.practicum.vk_kotlin.R
 import com.practicum.vk_kotlin.presentation.theme.VkKotlinTheme
 
 @Composable
-internal fun HomeHeader() {
+internal fun HomeHeader(
+    modifier: Modifier = Modifier,
+    onLogoClick: () -> Unit
+) {
     Row(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .height(96.dp)
             .background(MaterialTheme.colorScheme.primary)
@@ -38,12 +43,15 @@ internal fun HomeHeader() {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
-            imageVector = Icons.Default.Store,
+            painter = painterResource(R.drawable.rustore_icon),
             contentDescription = stringResource(R.string.app_name),
             modifier = Modifier
                 .padding(8.dp)
-                .size(24.dp),
-            tint = MaterialTheme.colorScheme.onPrimary
+                .size(32.dp)
+                .clickable(
+                    onClick = { onLogoClick() }
+                ),
+            tint = Color.Unspecified
         )
         Text(
             text = stringResource(R.string.app_name),
@@ -75,6 +83,6 @@ internal fun HomeHeader() {
 @Composable
 private fun HomeHeaderPreview() {
     VkKotlinTheme {
-        HomeHeader()
+        HomeHeader {}
     }
 }

@@ -1,6 +1,4 @@
-package com.practicum.vk_kotlin
-
-import com.practicum.vk_kotlin.domain.appdetails.Category
+package com.practicum.vk_kotlin.domain.appdetails
 
 data class AppDetails(
     val name: String,
