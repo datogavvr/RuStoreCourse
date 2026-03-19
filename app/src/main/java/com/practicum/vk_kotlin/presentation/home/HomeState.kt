@@ -8,6 +8,6 @@ sealed interface HomeState {
     data object Error : HomeState
     data object Loading : HomeState
     data class Content(
-        val appDetails: List<ShortAppDetails>,
+        val apps: List<ShortAppDetails>,
     ) : HomeState
 }
