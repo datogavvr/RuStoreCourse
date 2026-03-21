@@ -2,18 +2,20 @@ package com.practicum.vk_kotlin.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.practicum.vk_kotlin.data.home.HomeRepositoryImpl
+import com.practicum.vk_kotlin.domain.home.HomeRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.Channel.Factory.BUFFERED
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel() : ViewModel() {
-    // позже добавится DI
-    private val repo = HomeRepositoryImpl()
-
+@HiltViewModel
+class HomeViewModel @Inject constructor(
+    private val repo: HomeRepository
+) : ViewModel() {
     private val _state = MutableStateFlow<HomeState>(HomeState.Loading)
     val state = _state.asStateFlow()
 

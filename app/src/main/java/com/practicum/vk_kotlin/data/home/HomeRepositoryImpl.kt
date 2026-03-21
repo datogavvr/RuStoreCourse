@@ -3,9 +3,11 @@ package com.practicum.vk_kotlin.data.home
 import com.practicum.vk_kotlin.data.AppApi
 import com.practicum.vk_kotlin.domain.home.HomeRepository
 import com.practicum.vk_kotlin.domain.home.HomeAppDetails
+import javax.inject.Inject
 
-class HomeRepositoryImpl : HomeRepository {
-    private val appApi = AppApi()
+class HomeRepositoryImpl @Inject constructor(
+    private val appApi: AppApi,
+    ) : HomeRepository {
     private val mapper = HomeAppDetailsMapper()
 
     override suspend fun getApps(): List<HomeAppDetails> {

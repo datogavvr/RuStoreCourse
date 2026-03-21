@@ -1,6 +1,8 @@
 package com.practicum.vk_kotlin.domain.appdetails
 
-class GetAppDetailsUseCase(
+import javax.inject.Inject
+
+class GetAppDetailsUseCase @Inject constructor(
     private val appDetailsRepository: AppDetailsRepository,
 ) {
     suspend operator fun invoke(): AppDetails {
