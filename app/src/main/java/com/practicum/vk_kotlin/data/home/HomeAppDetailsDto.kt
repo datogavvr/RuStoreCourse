@@ -1,8 +1,8 @@
-package com.practicum.vk_kotlin.domain.home
+package com.practicum.vk_kotlin.data.home
 
 import com.practicum.vk_kotlin.domain.appdetails.Category
 
-data class ShortAppDetails(
+data class HomeAppDetailsDto(
     val name: String,
     val category: Category,
     val iconUrl: String,

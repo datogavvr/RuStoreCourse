@@ -1,9 +1,9 @@
 package com.practicum.vk_kotlin.data.home
 
-import com.practicum.vk_kotlin.domain.home.ShortAppDetails
+import com.practicum.vk_kotlin.domain.home.HomeAppDetails
 
-class ShortAppDetailsMapper {
-    fun toDomain(dto: ShortAppDetailsDto) : ShortAppDetails = ShortAppDetails(
+class HomeAppDetailsMapper {
+    fun toDomain(dto: HomeAppDetailsDto) : HomeAppDetails = HomeAppDetails(
             name = dto.name,
             category = dto.category,
             iconUrl = dto.iconUrl,
