@@ -3,10 +3,11 @@ package com.practicum.vk_kotlin.data.appdetails
 import com.practicum.vk_kotlin.data.AppApi
 import com.practicum.vk_kotlin.domain.appdetails.AppDetails
 import com.practicum.vk_kotlin.domain.appdetails.AppDetailsRepository
+import javax.inject.Inject
 
-
-class AppDetailsRepositoryImpl : AppDetailsRepository {
-    private val appApi = AppApi()
+class AppDetailsRepositoryImpl @Inject constructor(
+    private val appApi: AppApi
+) : AppDetailsRepository {
     private val mapper = AppDetailsMapper()
 
     override suspend fun get(): AppDetails {
