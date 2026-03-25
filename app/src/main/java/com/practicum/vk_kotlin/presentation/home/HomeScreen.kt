@@ -25,7 +25,7 @@ import kotlinx.coroutines.flow.Flow
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
-    onAppClick: () -> Unit
+    onAppClick: (String) -> Unit
 ) {
     val viewModel = hiltViewModel<HomeViewModel>()
     val state by viewModel.state.collectAsState()

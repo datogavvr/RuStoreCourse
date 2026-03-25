@@ -3,10 +3,7 @@ package com.practicum.vk_kotlin.presentation.navigation
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -29,11 +26,19 @@ fun AppNavGraph(
         }
     ) {
         composable(Routes.HOME.name) {
-            HomeScreen(onAppClick = { navController.navigate(Routes.APP_DETAILS.name) })
+            HomeScreen(
+                onAppClick = { id ->
+                    navController.navigate("${Routes.APP_DETAILS.name}/$id")
+                }
+            )
         }
 
-        composable(Routes.APP_DETAILS.name) {
-            AppDetailsScreen(onBackClick = { navController.popBackStack() })
+        composable(
+            "${Routes.APP_DETAILS.name}/{id}"
+        ) {
+            AppDetailsScreen(
+                onBackClick = { navController.popBackStack() }
+            )
         }
     }
 }

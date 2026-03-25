@@ -1,5 +1,7 @@
 package com.practicum.vk_kotlin.presentation.appdetails
 
+import android.util.Log
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.practicum.vk_kotlin.domain.appdetails.GetAppDetailsUseCase
@@ -16,6 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class AppDetailsViewModel @Inject constructor(
     private val getAppDetailsUseCase: GetAppDetailsUseCase,
+    private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     private val _state = MutableStateFlow<AppDetailsState>(AppDetailsState.Loading)
@@ -45,18 +48,19 @@ class AppDetailsViewModel @Inject constructor(
     }
 
     fun getAppDetails() {
+        val id = savedStateHandle.get<String>("id") ?: ""
         viewModelScope.launch {
             _state.value = AppDetailsState.Loading
 
             runCatching {
-                // В будущем заменим этот метод на вызов API.
-                val appDetails = getAppDetailsUseCase()
+                val appDetails = getAppDetailsUseCase(id)
 
                 _state.value = AppDetailsState.Content(
                     appDetails = appDetails,
                     descriptionCollapsed = false,
                 )
-            }.onFailure {
+            }.onFailure { error ->
+                Log.e("AppDetailsViewModel", "Ошибка загрузки данных о приложении", error)
                 _state.value = AppDetailsState.Error
             }
         }

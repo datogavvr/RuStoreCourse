@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -29,8 +31,9 @@ fun AppDetailsContent(
 ) {
     val appDetails = content.appDetails
     val descriptionCollapsed = content.descriptionCollapsed
+    val scrollState = rememberScrollState()
 
-    Column(modifier) {
+    Column(modifier.verticalScroll(scrollState)) {
         Toolbar(
             onBackClick = onBackClick,
             onShareClick = onShareClick,
@@ -47,11 +50,13 @@ fun AppDetailsContent(
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
         )
-        Spacer(Modifier.height(12.dp))
-        ScreenshotsList(
-            screenshotUrlList = appDetails.screenshotUrlList,
-            contentPadding = PaddingValues(horizontal = 16.dp),
-        )
+        if (appDetails.screenshotUrlList != null) {
+            Spacer(Modifier.height(12.dp))
+            ScreenshotsList(
+                screenshotUrlList = appDetails.screenshotUrlList,
+                contentPadding = PaddingValues(horizontal = 16.dp),
+            )
+        }
         Spacer(Modifier.height(12.dp))
         AppDescription(
             description = appDetails.description,
@@ -84,6 +89,7 @@ private fun Preview() {
         AppDetailsContent(
             content = AppDetailsState.Content(
                 appDetails = AppDetails(
+                    id = "1",
                     name = "Гильдия Героев: Экшен ММО РПГ",
                     developer = "VK Play",
                     category = Category.GAME,
