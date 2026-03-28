@@ -40,7 +40,8 @@ class HomeViewModel @Inject constructor(
                 val apps = repo.getApps()
 
                 _state.value = HomeState.Content(apps = apps)
-            }.onFailure {
+            }.onFailure { error ->
+                android.util.Log.e("HomeViewModel", "Ошибка загрузки списка приложений", error)
                 _state.value = HomeState.Error
             }
         }

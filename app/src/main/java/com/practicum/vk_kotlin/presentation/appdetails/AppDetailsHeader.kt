@@ -86,8 +86,6 @@ internal fun AppDetailsHeader(
     }
 }
 
-// Статичные строки, которые не приходят из бэкенда
-// нужно хранить в ресурсах (strings.xml).
 @Composable
 fun getCategoryText(category: Category): String = when (category) {
     Category.APP -> stringResource(R.string.category_app)
@@ -97,16 +95,16 @@ fun getCategoryText(category: Category): String = when (category) {
     Category.EDUCATION -> stringResource(R.string.category_education)
     Category.ENTERTAINMENT -> stringResource(R.string.category_entertainment)
     Category.MUSIC -> stringResource(R.string.category_music)
-    Category.VIDEO -> stringResource(R.string.category_video)
     Category.PHOTOGRAPHY -> stringResource(R.string.category_photography)
     Category.HEALTH -> stringResource(R.string.category_health)
+    Category.LIFESTYLE -> stringResource(R.string.category_lifestyle)
     Category.SPORTS -> stringResource(R.string.category_sports)
     Category.NEWS -> stringResource(R.string.category_news)
+    Category.WEATHER -> stringResource(R.string.category_weather)
     Category.BOOKS -> stringResource(R.string.category_books)
     Category.BUSINESS -> stringResource(R.string.category_business)
     Category.FINANCE -> stringResource(R.string.category_finance)
     Category.TRAVEL -> stringResource(R.string.category_travel)
-    Category.MAPS -> stringResource(R.string.category_maps)
     Category.FOOD -> stringResource(R.string.category_food)
     Category.SHOPPING -> stringResource(R.string.category_shopping)
     Category.UTILITIES -> stringResource(R.string.category_utilities)
@@ -116,6 +114,7 @@ fun getCategoryText(category: Category): String = when (category) {
 @Composable
 private fun Preview() {
     val app = AppDetails(
+        id = "1",
         name = "Гильдия Героев: Экшен ММО РПГ",
         developer = "VK Play",
         category = Category.GAME,

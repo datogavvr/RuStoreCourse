@@ -14,7 +14,7 @@ enum class Category {
     @SerialName("Производительность")
     PRODUCTIVITY,
 
-    @SerialName("Социальные сети")
+    @SerialName("Общение")
     SOCIAL,
 
     @SerialName("Образование")
@@ -26,14 +26,14 @@ enum class Category {
     @SerialName("Музыка")
     MUSIC,
 
-    @SerialName("Видео")
-    VIDEO,
-
-    @SerialName("Фотография")
+    @SerialName("Фото и видео")
     PHOTOGRAPHY,
 
-    @SerialName("Здоровье")
+    @SerialName("Здоровье и фитнес")
     HEALTH,
+
+    @SerialName("Образ жизни")
+    LIFESTYLE,
 
     @SerialName("Спорт")
     SPORTS,
@@ -41,7 +41,10 @@ enum class Category {
     @SerialName("Новости")
     NEWS,
 
-    @SerialName("Книги")
+    @SerialName("Погода")
+    WEATHER,
+
+    @SerialName("Книги и справочники")
     BOOKS,
 
     @SerialName("Бизнес")
@@ -50,16 +53,13 @@ enum class Category {
     @SerialName("Финансы")
     FINANCE,
 
-    @SerialName("Путешествия")
+    @SerialName("Навигация")
     TRAVEL,
 
-    @SerialName("Карты")
-    MAPS,
-
-    @SerialName("Еда")
+    @SerialName("Еда и напитки")
     FOOD,
 
-    @SerialName("Покупки")
+    @SerialName("Шопинг")
     SHOPPING,
 
     @SerialName("Утилиты")

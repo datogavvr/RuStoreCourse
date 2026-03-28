@@ -9,17 +9,16 @@
     <string name="category_education">Education</string>
     <string name="category_entertainment">Entertainment</string>
     <string name="category_music">Music</string>
-    <string name="category_video">Video</string>
-    <string name="category_photography">Photography</string>
-    <string name="category_health">Health</string>
+    <string name="category_photography">Photo and video</string>
+    <string name="category_health">Health and fitness</string>
     <string name="category_sports">Sports</string>
     <string name="category_news">News</string>
+    <string name="category_weather">Weather</string>
     <string name="category_books">Books</string>
     <string name="category_business">Business</string>
     <string name="category_finance">Finance</string>
-    <string name="category_travel">Travel</string>
-    <string name="category_maps">Maps</string>
-    <string name="category_food">Food</string>
+    <string name="category_travel">Navigation and travel</string>
+    <string name="category_food">Food and drinks</string>
     <string name="category_shopping">Shopping</string>
     <string name="category_utilities">Utilities</string>
     <string name="app_details_age">Age</string>
@@ -32,4 +31,5 @@
     <string name="under_development">Under development</string>
     <string name="app_details_error">An unexpected error has occurred</string>
     <string name="app_details_error_refresh">Refresh</string>
+    <string name="category_lifestyle">Lifestyle</string>
 </resources>
