@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.practicum.vk_kotlin.domain.appdetails.GetAppDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.Channel.Factory.BUFFERED
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -28,7 +29,9 @@ class AppDetailsViewModel @Inject constructor(
     val events = _events.receiveAsFlow()
 
     init {
-        getAppDetails()
+        viewModelScope.launch(Dispatchers.IO) {
+            getAppDetails()
+        }
     }
 
     fun showUnderDevelopmentMessage() {
