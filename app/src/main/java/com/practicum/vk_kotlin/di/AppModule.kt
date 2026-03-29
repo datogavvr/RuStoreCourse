@@ -8,8 +8,6 @@ import com.practicum.vk_kotlin.data.appdetails.AppDetailsMapper
 import com.practicum.vk_kotlin.data.local.AppDatabase
 import com.practicum.vk_kotlin.data.local.AppDetailsDao
 import com.practicum.vk_kotlin.data.local.AppDetailsEntityMapper
-import com.practicum.vk_kotlin.domain.appdetails.AppDetailsRepository
-import com.practicum.vk_kotlin.domain.appdetails.GetAppDetailsUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -46,12 +44,6 @@ object AppModule {
     @Singleton
     fun provideAppApi(retrofit: Retrofit): AppApi {
         return retrofit.create(AppApi::class.java)
-    }
-
-    @Provides
-    @Singleton
-    fun provideGetAppDetailsUseCase(repository: AppDetailsRepository): GetAppDetailsUseCase {
-        return GetAppDetailsUseCase(repository)
     }
 
     @Provides

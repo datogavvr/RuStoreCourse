@@ -24,16 +24,16 @@
     <string name="category_utilities">Утилиты</string>
 
 
+    <string name="back_button">Вернуться назад</string>
+    <string name="favorite_button_on">Удалить из избранного</string>
+    <string name="favorite_button_off">Добавить в избранное</string>
+    <string name="share_button">Поделиться</string>
     <string name="app_details_age">Возраст</string>
     <string name="app_details_size">Размер</string>
-
     <string name="install">Установить</string>
-
     <string name="app_details_screenshots">Скриншоты</string>
-
     <string name="app_details_description">Описание приложения</string>
     <string name="app_details_read_more">Читать подробнее</string>
-
     <string name="app_details_developer">Разработчик</string>
 
     <string name="under_development">В процессе разработки</string>

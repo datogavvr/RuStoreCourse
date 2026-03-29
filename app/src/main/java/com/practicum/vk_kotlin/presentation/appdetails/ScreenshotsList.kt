@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -31,6 +32,7 @@ internal fun ScreenshotsList(
         Text(
             text = stringResource(R.string.app_details_screenshots),
             modifier = Modifier.padding(contentPadding),
+            style = MaterialTheme.typography.titleMedium
         )
         Spacer(Modifier.height(8.dp))
         HorizontalPager(

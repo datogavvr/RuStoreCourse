@@ -15,7 +15,8 @@ class AppDetailsEntityMapper {
         size = domain.size,
         iconUrl = domain.iconUrl,
         screenshots = Gson().toJson(domain.screenshotUrlList),
-        description = domain.description
+        description = domain.description,
+        isFavorite = domain.isFavorite
     )
 
     fun toDomain(entity: AppDetailsEntity): AppDetails = AppDetails(
@@ -27,6 +28,7 @@ class AppDetailsEntityMapper {
         size = entity.size,
         iconUrl = entity.iconUrl,
         screenshotUrlList = Gson().fromJson(entity.screenshots, object : TypeToken<List<String>>() {}.type),
-        description = entity.description
+        description = entity.description,
+        isFavorite = entity.isFavorite
     )
 }
