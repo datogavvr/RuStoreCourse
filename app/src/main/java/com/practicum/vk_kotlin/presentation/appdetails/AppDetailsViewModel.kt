@@ -4,9 +4,9 @@ import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.practicum.vk_kotlin.domain.CoroutineDispatchers
 import com.practicum.vk_kotlin.domain.appdetails.AppDetailsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.Channel.Factory.BUFFERED
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,7 +20,8 @@ import javax.inject.Inject
 @HiltViewModel
 class AppDetailsViewModel @Inject constructor(
     private val appDetailsRepository: AppDetailsRepository,
-    savedStateHandle: SavedStateHandle
+    savedStateHandle: SavedStateHandle,
+    private val dispatchers: CoroutineDispatchers
 ) : ViewModel() {
 
     private val _state = MutableStateFlow<AppDetailsState>(AppDetailsState.Loading)
@@ -53,13 +54,13 @@ class AppDetailsViewModel @Inject constructor(
     }
 
     fun toggleFavorite() {
-        viewModelScope.launch {
+        viewModelScope.launch(dispatchers.io()) {
             appDetailsRepository.toggleFavorite(id)
         }
     }
 
     fun getAppDetails() {
-        viewModelScope.launch {
+        viewModelScope.launch(dispatchers.io()) {
             _state.value = AppDetailsState.Loading
             runCatching {
                 appDetailsRepository.get(id)
@@ -71,7 +72,7 @@ class AppDetailsViewModel @Inject constructor(
     }
 
     fun observeAppDetails() {
-        viewModelScope.launch {
+        viewModelScope.launch(dispatchers.io()) {
             appDetailsRepository.observeAppDetails(id)
                 .catch { _state.value = AppDetailsState.Error }
                 .collect { appDetails ->
