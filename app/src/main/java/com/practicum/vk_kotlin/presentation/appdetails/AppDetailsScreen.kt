@@ -63,6 +63,7 @@ fun AppDetailsScreen(
                 AppDetailsContent(
                     content = currentState,
                     onBackClick = { onBackClick() },
+                    onFavoriteClick = { viewModel.toggleFavorite() },
                     onShareClick = {
                         viewModel.showUnderDevelopmentMessage()
                     },
@@ -106,6 +107,6 @@ private fun ObserveEvents(
 @Composable
 private fun Preview() {
     VkKotlinTheme {
-        AppDetailsScreen {}
+        AppDetailsScreen({})
     }
 }

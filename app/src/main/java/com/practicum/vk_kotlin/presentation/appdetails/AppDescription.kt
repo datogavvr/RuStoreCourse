@@ -24,7 +24,10 @@ internal fun AppDescription(
     modifier: Modifier = Modifier,
 ) {
     Column(modifier) {
-        Text(text = stringResource(R.string.app_details_description))
+        Text(
+            text = stringResource(R.string.app_details_description),
+            style = MaterialTheme.typography.titleMedium
+        )
         Spacer(Modifier.height(8.dp))
         Text(
             text = description,

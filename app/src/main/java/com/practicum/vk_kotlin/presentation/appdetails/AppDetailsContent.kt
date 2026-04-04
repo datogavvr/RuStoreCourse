@@ -23,6 +23,7 @@ import com.practicum.vk_kotlin.presentation.theme.VkKotlinTheme
 fun AppDetailsContent(
     content: AppDetailsState.Content,
     onBackClick: () -> Unit,
+    onFavoriteClick: () -> Unit,
     onShareClick: () -> Unit,
     onInstallClick: () -> Unit,
     onReadMoreClick: () -> Unit,
@@ -36,6 +37,8 @@ fun AppDetailsContent(
     Column(modifier.verticalScroll(scrollState)) {
         Toolbar(
             onBackClick = onBackClick,
+            isFavorite = content.appDetails.isFavorite,
+            onFavoriteClick = onFavoriteClick,
             onShareClick = onShareClick,
         )
         Spacer(Modifier.height(8.dp))
@@ -108,6 +111,7 @@ private fun Preview() {
             ),
             onReadMoreClick = {},
             onBackClick = {},
+            onFavoriteClick = {},
             onShareClick = {},
             onInstallClick = {},
             onDeveloperClick = {},
