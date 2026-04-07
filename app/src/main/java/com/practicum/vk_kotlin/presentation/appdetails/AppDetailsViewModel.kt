@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.practicum.vk_kotlin.domain.CoroutineDispatchers
 import com.practicum.vk_kotlin.domain.appdetails.AppDetailsRepository
+import com.practicum.vk_kotlin.domain.appdetails.GetAppDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.Channel.Factory.BUFFERED
@@ -19,6 +20,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AppDetailsViewModel @Inject constructor(
+    private val getAppDetailsUseCase: GetAppDetailsUseCase,
     private val appDetailsRepository: AppDetailsRepository,
     savedStateHandle: SavedStateHandle,
     private val dispatchers: CoroutineDispatchers
@@ -63,7 +65,7 @@ class AppDetailsViewModel @Inject constructor(
         viewModelScope.launch(dispatchers.io()) {
             _state.value = AppDetailsState.Loading
             runCatching {
-                appDetailsRepository.get(id)
+                getAppDetailsUseCase(id)
             }.onFailure { error ->
                 Log.e("AppDetailsViewModel", "Ошибка загрузки данных о приложении", error)
                 _state.value = AppDetailsState.Error
