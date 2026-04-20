@@ -2,7 +2,7 @@ package com.practicum.vk_kotlin.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.practicum.vk_kotlin.domain.home.HomeRepository
+import com.practicum.vk_kotlin.domain.home.GetHomeAppsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.Channel.Factory.BUFFERED
@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val repo: HomeRepository
+    private val getHomeAppsUseCase: GetHomeAppsUseCase
 ) : ViewModel() {
     private val _state = MutableStateFlow<HomeState>(HomeState.Loading)
     val state = _state.asStateFlow()
@@ -37,7 +37,7 @@ class HomeViewModel @Inject constructor(
             _state.value = HomeState.Loading
 
             runCatching {
-                val apps = repo.getApps()
+                val apps = getHomeAppsUseCase()
 
                 _state.value = HomeState.Content(apps = apps)
             }.onFailure { error ->

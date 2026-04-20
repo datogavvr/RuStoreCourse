@@ -1,10 +1,13 @@
 package com.practicum.vk_kotlin.data.local
 
-import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.practicum.vk_kotlin.domain.appdetails.AppDetails
 
 class AppDetailsEntityMapper {
+    private val gson = GsonBuilder()
+        .disableHtmlEscaping()
+        .create()
 
     fun toEntity(domain: AppDetails): AppDetailsEntity = AppDetailsEntity(
         id = domain.id,
@@ -14,7 +17,7 @@ class AppDetailsEntityMapper {
         ageRating = domain.ageRating,
         size = domain.size,
         iconUrl = domain.iconUrl,
-        screenshots = Gson().toJson(domain.screenshotUrlList),
+        screenshots = gson.toJson(domain.screenshotUrlList),
         description = domain.description,
         isFavorite = domain.isFavorite
     )
@@ -27,7 +30,7 @@ class AppDetailsEntityMapper {
         ageRating = entity.ageRating,
         size = entity.size,
         iconUrl = entity.iconUrl,
-        screenshotUrlList = Gson().fromJson(entity.screenshots, object : TypeToken<List<String>>() {}.type),
+        screenshotUrlList = gson.fromJson(entity.screenshots, object : TypeToken<List<String>>() {}.type),
         description = entity.description,
         isFavorite = entity.isFavorite
     )
